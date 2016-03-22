@@ -35,4 +35,4 @@ made specifically for Atuin.
 
 ## Autobuild
 
-This container is auto-built on Docker Hub at [https://hub.docker.com/r/scalebox/atuin-gulp/]
+This container is auto-built on [Docker Hub](https://hub.docker.com/r/scalebox/atuin-gulp/)
