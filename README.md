@@ -1,5 +1,7 @@
 # atuin-gulp
 
+V2 Branch. Use **only** with **unreleased** Atuin v2.
+
 ## Read This first
 
 This container is not meant to be used *as is* but part of the docker-compose
