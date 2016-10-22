@@ -17,9 +17,29 @@ gulp.task(	'css',
 						.pipe($.autoprefixer({
 							cascade: false
 						}))
-						.pipe($.size({ title: 'LOG css' }))
+						.pipe($.size({ title: 'App css' }))
 						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
-						.pipe($.size({ title: 'LOG css:min' }))
+						.pipe($.size({ title: 'App css:min' }))
+						.pipe(gulp.dest(config.min.css));
+			}
+);
+
+// public atuin
+gulp.task(	'atuin_css',
+			false,
+			function() {
+				return gulp.src(config.src.atuin_css)
+						.pipe($.plumber({
+							errorHandler: util.onError
+						}))
+						.concat('atuin.scss')
+						.pipe($.sass().on('error', util.onError))
+						.pipe($.autoprefixer({
+							cascade: false
+						}))
+						.pipe($.size({ title: 'Atuin css' }))
+						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe($.size({ title: 'Atuin css:min' }))
 						.pipe(gulp.dest(config.min.css));
 			}
 );
@@ -36,9 +56,29 @@ gulp.task(	'css_admin',
 						.pipe($.autoprefixer({
 							cascade: false
 						}))
-						.pipe($.size({ title: 'LOG css_admin' }))
+						.pipe($.size({ title: 'App css_admin' }))
 						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
-						.pipe($.size({ title: 'LOG css_admin:min' }))
+						.pipe($.size({ title: 'App css_admin:min' }))
+						.pipe(gulp.dest(config.min.css_admin));
+			}
+);
+
+// admin specific Atuin
+gulp.task(	'atuin_css_admin',
+			false,
+			function() {
+				return gulp.src(config.src.css_admin)
+						.pipe($.plumber({
+							errorHandler: util.onError
+						}))
+						.concat('atuin.scss')
+						.pipe($.sass().on('error', util.onError))
+						.pipe($.autoprefixer({
+							cascade: false
+						}))
+						.pipe($.size({ title: 'Atuin css_admin' }))
+						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe($.size({ title: 'Atuin css_admin:min' }))
 						.pipe(gulp.dest(config.min.css_admin));
 			}
 );

@@ -14,9 +14,25 @@ gulp.task(	'js',
 							errorHandler: util.onError
 						}))
 						.pipe($.concat('all.js'))
-						.pipe($.size({ title: 'LOG js ' }))
+						.pipe($.size({ title: 'App js ' }))
 						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
-						.pipe($.size({ title: 'LOG js:min ' }))
+						.pipe($.size({ title: 'App js:min ' }))
+						.pipe(gulp.dest(config.min.js));
+			}	
+);
+
+// public atuin
+gulp.task(	'atuin_js',
+		    false,
+			function() {
+				return gulp.src(config.src.atuin_js)
+						.pipe( $.plumber({
+							errorHandler: util.onError
+						}))
+						.pipe($.concat('atuin.js'))
+						.pipe($.size({ title: 'Atuin js ' }))
+						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
+						.pipe($.size({ title: 'Atuin js:min ' }))
 						.pipe(gulp.dest(config.min.js));
 			}	
 );
@@ -30,9 +46,25 @@ gulp.task(	'js_admin',
 							errorHandler: util.onError
 						}))
 						.pipe($.concat('all.js'))
-						.pipe($.size({ title: 'LOG js_admin ' }))
+						.pipe($.size({ title: 'App js_admin ' }))
 						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
-						.pipe($.size({ title: 'LOG js_admin:min ' }))
+						.pipe($.size({ title: 'App js_admin:min ' }))
+						.pipe(gulp.dest(config.min.js_admin));
+			}	
+);
+
+// admin specific
+gulp.task(	'atuin_js_admin',
+		    false,
+			function() {
+				return gulp.src(config.src.atuin_js_admin)
+						.pipe( $.plumber({
+							errorHandler: util.onError
+						}))
+						.pipe($.concat('atuin.js'))
+						.pipe($.size({ title: 'Atuin js_admin ' }))
+						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
+						.pipe($.size({ title: 'Atuin js_admin:min ' }))
 						.pipe(gulp.dest(config.min.js_admin));
 			}	
 );

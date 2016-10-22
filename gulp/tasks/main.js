@@ -26,7 +26,14 @@ gulp.task(	'update',
 gulp.task(	'monitor',
 			'Real time check for css and js.',
 			function() {
-				$.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'watch')();
+				$.sequence([
+							'atuin_css', 'atuin_css_admin',
+							'css', 'css_admin', 
+							'atuin_js', 'atuin_js_admin', 
+							'js', 'js_admin', 
+							'img'
+							], 
+							'watch')();
 			}
 );
 

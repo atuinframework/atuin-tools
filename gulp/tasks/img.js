@@ -22,3 +22,20 @@ gulp.task(	'img',
 						.pipe(gulp.dest(config.min.img))
 			}
 );
+
+gulp.task(	'atuin_img',
+			false,
+			function() {
+				gulp.src(config.src.atuin_img)
+					.pipe(changed(config.min.atuin_img))
+					.pipe($.imagemin({
+						progressive: true,
+						svgoPlugins: [{removeViewBox:false}, {removeUselessStrokeAndFill:false}]
+					}))
+					.pipe(gulp.dest(config.min.atuin_img));
+				
+				return gulp.src(config.src.atuin_img_as_is)
+						.pipe(changed(config.min.atuin_img))
+						.pipe(gulp.dest(config.min.atuin_img))
+			}
+);
