@@ -32,7 +32,7 @@ gulp.task(	'atuin_css',
 						.pipe($.plumber({
 							errorHandler: util.onError
 						}))
-						.concat('atuin.scss')
+						.pipe($.concat('atuin.scss'))
 						.pipe($.sass().on('error', util.onError))
 						.pipe($.autoprefixer({
 							cascade: false
@@ -71,7 +71,7 @@ gulp.task(	'atuin_css_admin',
 						.pipe($.plumber({
 							errorHandler: util.onError
 						}))
-						.concat('atuin.scss')
+						.pipe($.concat('atuin.scss'))
 						.pipe($.sass().on('error', util.onError))
 						.pipe($.autoprefixer({
 							cascade: false
