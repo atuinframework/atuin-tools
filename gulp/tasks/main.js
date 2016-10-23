@@ -31,7 +31,7 @@ gulp.task(	'monitor',
 							'css', 'css_admin', 
 							'atuin_js', 'atuin_js_admin', 
 							'js', 'js_admin', 
-							'img'
+							'img', 'atuin_img'
 							], 
 							'watch')();
 			}
@@ -49,7 +49,7 @@ gulp.task(	'deploy:update',
 );
 
 gulp.task(	'deploy',
-			'Deploy on gae.',
+			'Deploy on GAE.',
 			function() {
 				$.util.env.type = 'production';
 				return $.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'deploy:update')();
