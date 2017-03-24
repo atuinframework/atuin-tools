@@ -21,6 +21,37 @@ localization, caching. Look at the repository for more details. :)
 
 Atuin free to use for all.
 
+### ENV variables
+
+Be sure to export as environment variables the followings:
+
+- `CONFIG_FOLDER` -configuration folder path- to let gulp, bable and others know where project configuration files are.
+
+### Suggested usage in project docker-compose file
+
+```yaml
+    services:
+      atuin-env-setup:
+        image: scalebox/atuin-gulp:v2
+        environment:
+          # folder for requirements.txt, bable.cfg files
+          - CONFIG_FOLDER=config
+        volumes:
+          - ./app:/workspace/app
+          - ./config:/workspace/config
+        entrypoint: gulp update
+    
+      atuin-tools:
+        image: scalebox/atuin-gulp:v2
+        volumes:
+          - ./app:/workspace/app
+        entrypoint: gulp monitor
+
+```
+
+- `atuin-env-setup` is used to install/update all project dependencies defined in config/requirements.txt
+- `atuin-tools` is the one that remains in a monitor status (instead of exiting as the previous one when completed updates) to minify and concatenate CSS, JS and images files
+
 ## And this container?
 
 In modern days we use lots of different tools to build assets, compile js, minification

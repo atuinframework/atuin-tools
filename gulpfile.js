@@ -14,11 +14,7 @@ gulp.task(	'default',
 					// default | help
 					$.util.colors.yellow('default | help') + '\n\t\t' +
 					'Shows the available tasks\n\n\t' +
-					
-					// run
-					$.util.colors.yellow('run') + '\n' +
-					'\t\tRun development server.\n\n\t' +
-					
+
 					// update
 					$.util.colors.yellow('update') + '\n\t\t' +
 					'Management of the development environment.\n\t\tIt checks that all dependencies are satisfied, initializes the env packages and updates them.\n\n\t' +
@@ -28,9 +24,9 @@ gulp.task(	'default',
 					'Real time check for css and js.\n\t\tIt handles errors and rebuilds the minified and compiled files.\n\t\t' +
 					$.util.colors.magenta('--type production') + 'compress css and obfuscate js.\n\n\t' +
 					
-					// deploy
-					//$.util.colors.yellow('deploy') + '\n\t\t' +
-					//'Deploy on gae.\n\n\t' +
+					// prepare deploy
+					//$.util.colors.yellow('prepare-deploy') + '\n\t\t' +
+					//'Preare static files to being deployed: minification and uglification of files.\n\n\t' +
 					
 					// clean
 					$.util.colors.yellow('clean[:min|:css|:js|:img]') + '\n\t\t' +

@@ -23,11 +23,7 @@ config ={
 		'img' 		: paths.static.min.img.root,
 		'atuin_img'	: paths.static.min.img.atuin.root
 	},
-	'lib' : paths.lib.root,
-	'tmp' : {
-		'datastore_db' : paths.tmp.datastore.root,
-	}
-	
-}
+	'lib' : paths.lib.root
+};
 
 module.exports = config;

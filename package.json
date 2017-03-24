@@ -6,8 +6,8 @@
   "author": "",
   "license": "MIT",
   "repository": {
-    "type": "hg",
-    "url": "https://bitbucket.org/xcash/farm-machines"
+    "type": "git",
+    "url": "https://github.com/xcash/atuin-gulp"
   },
   "dependencies": {},
   "devDependencies": {

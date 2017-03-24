@@ -3,18 +3,6 @@ var gulp = require('gulp-help')(require('gulp')),
 	$ = require('gulp-load-plugins')(),
 	config = require('../config.js'),
 	mkdirs = require('mkdirs');
-	
-gulp.task(	'run',
-			'Run development server.',
-			function() {
-				mkdirs(config.tmp.datastore_db);
-				gulp.src('dev.sh')
-					.pipe($.start( [{
-						match: /dev.sh$/,
-						cmd: 'dev_appserver.py --storage_path=tmp/datastore app'
-					}]));
-			}
-);
 
 gulp.task(	'update',
 			'Updates Python requirements.',
@@ -26,32 +14,14 @@ gulp.task(	'update',
 gulp.task(	'monitor',
 			'Real time check for css and js.',
 			function() {
-				$.sequence([
-							'atuin_css', 'atuin_css_admin',
-							'css', 'css_admin', 
-							'atuin_js', 'atuin_js_admin', 
-							'js', 'js_admin', 
-							'img', 'atuin_img'
-							], 
-							'watch')();
+				$.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'watch')();
 			}
 );
 
-gulp.task(	'deploy:update',
-			false,
-			function() {
-				return gulp.src('dev.sh')
-					.pipe($.start( [{
-						match: /dev.sh$/,
-						cmd: 'appcfg.py update app'
-					}]));
-			}
-);
-
-gulp.task(	'deploy',
-			'Deploy on GAE.',
+gulp.task(	'prepare-deploy',
+			'Preare static files to being deployed: minification and uglification of files.',
 			function() {
 				$.util.env.type = 'production';
-				return $.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'deploy:update')();
+				return $.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'])();
 			}
 );
