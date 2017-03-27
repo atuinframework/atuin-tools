@@ -3,8 +3,7 @@ var gulp = require('gulp-help')(require('gulp')),
 	fs = require('fs'),
 	$ = require('gulp-load-plugins')(),
 	config = require('../config'),
-	del = require('del'),
-	env_config_folder = (process.env.CONFIG_FOLDER) ? (process.env.CONFIG_FOLDER + '/') : '';
+	del = require('del');
 
 
 gulp.task(	'translations:init',
@@ -28,7 +27,7 @@ gulp.task(	'translations:extract',
 				return gulp.src('gulpfile.js')
 						.pipe($.start( [{
 							match: /gulpfile.js$/,
-							cmd: 'pybabel extract -k lazy_gettext -F ' + env_config_folder + 'babel.cfg -o app/messages.pot app'
+							cmd: 'pybabel extract -k lazy_gettext -F config/babel.cfg -o app/messages.pot app'
 						}]));
 			}
 );

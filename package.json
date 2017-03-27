@@ -1,7 +1,7 @@
 {
-  "name": "gae-atuin",
+  "name": "atuin-gulp",
   "version": "1.0.0",
-  "description": "GAE Atuin",
+  "description": "Atuin gulp environment for static files management",
   "main": "gulpfile.js",
   "author": "",
   "license": "MIT",

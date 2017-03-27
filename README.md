@@ -7,6 +7,24 @@ V2 Branch. Use **only** with **unreleased** Atuin v2.
 This container is not meant to be used *as is* but part of the docker-compose
 environment started for development in Flask (and GAE) Atuin.
 
+### Suggested usage in project docker-compose file
+
+```yaml
+    services:
+      atuin-tools:
+        image: scalebox/atuin-gulp:v2
+        volumes:
+          - ./app:/workspace/app
+          - ./config:/workspace/config
+```
+
+### Before the deploy... don't forget to:
+
+```bash
+docker run -it --rm scalebox/atuin-gulp:v2 gulp prepare-deploy
+```
+
+
 ## What is Atuin?
 
 Atuin is a Flask powered web framework built by SCALEBOX, an Italian IT Agency,
@@ -20,37 +38,6 @@ Atuin includes some useful flask extensions for common tasks such as authenticat
 localization, caching. Look at the repository for more details. :)
 
 Atuin free to use for all.
-
-### ENV variables
-
-Be sure to export as environment variables the followings:
-
-- `CONFIG_FOLDER` -configuration folder path- to let gulp, bable and others know where project configuration files are.
-
-### Suggested usage in project docker-compose file
-
-```yaml
-    services:
-      atuin-env-setup:
-        image: scalebox/atuin-gulp:v2
-        environment:
-          # folder for requirements.txt, bable.cfg files
-          - CONFIG_FOLDER=config
-        volumes:
-          - ./app:/workspace/app
-          - ./config:/workspace/config
-        entrypoint: gulp update
-    
-      atuin-tools:
-        image: scalebox/atuin-gulp:v2
-        volumes:
-          - ./app:/workspace/app
-        entrypoint: gulp monitor
-
-```
-
-- `atuin-env-setup` is used to install/update all project dependencies defined in config/requirements.txt
-- `atuin-tools` is the one that remains in a monitor status (instead of exiting as the previous one when completed updates) to minify and concatenate CSS, JS and images files
 
 ## And this container?
 

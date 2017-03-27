@@ -70,16 +70,4 @@ p.static.min.img.root = p.static.min.root + '/img';
 p.static.min.img.atuin = {};
 p.static.min.img.atuin.root = p.static.min.img.root + '/atuin';
 
-// lib
-p.lib = {}
-p.lib.root = p.main.root + '/lib';
-
-// tmp
-p.tmp = {}
-p.tmp.root = 'tmp';
-
-// tmp/datastore
-p.tmp.datastore = {}
-p.tmp.datastore.root = p.tmp.root + '/datastore';
-
 module.exports = p;
