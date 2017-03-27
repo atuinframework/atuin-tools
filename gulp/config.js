@@ -13,7 +13,7 @@ config ={
 		'img' 				: [ paths.static.src.img.root + '/**/*.@(jpg|gif|png)' ],
 		'img_as_is' 		: [ paths.static.src.img.root + '/**/*.@(svg)' ],
 		'atuin_img' 		: [ paths.static_atuin.src.img.root + '/**/*.@(jpg|gif|png)' ],
-		'atuin_img_as_is'	: [ paths.static_atuin.src.img.root + '/**/*.@(svg)' ],
+		'atuin_img_as_is'	: [ paths.static_atuin.src.img.root + '/**/*.@(svg)' ]
 	},
 	'min' : {
 		'css' 		: paths.static.min.css.root,
