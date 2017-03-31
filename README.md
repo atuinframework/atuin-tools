@@ -7,6 +7,24 @@ V2 Branch. Use **only** with **unreleased** Atuin v2.
 This container is not meant to be used *as is* but part of the docker-compose
 environment started for development in Flask (and GAE) Atuin.
 
+### Suggested usage in project docker-compose file
+
+```yaml
+    services:
+      atuin-tools:
+        image: scalebox/atuin-gulp:v2
+        volumes:
+          - ./app:/workspace/app
+          - ./config:/workspace/config
+```
+
+### Before the deploy... don't forget to:
+
+```bash
+docker run -it --rm scalebox/atuin-gulp:v2 gulp prepare-deploy
+```
+
+
 ## What is Atuin?
 
 Atuin is a Flask powered web framework built by SCALEBOX, an Italian IT Agency,
