@@ -20,4 +20,7 @@ ENV NODE_ENV development
 
 RUN npm update
 
+# Cleanup build tools to save image footprint
+RUN apk del build-base autoconf automake nasm
+
 CMD ["gulp", "monitor"]
