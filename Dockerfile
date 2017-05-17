@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     && \
     pip install --upgrade pip && \
     pip install --upgrade flask flask_babel setuptools && \
-    apk del py-pip && \
+    # apk del py-pip && \
     yarn cache clean && \
     rm -rf /var/cache/* /tmp/*
 
