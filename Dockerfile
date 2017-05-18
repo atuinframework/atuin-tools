@@ -7,8 +7,8 @@ RUN apk add --no-cache \
     zlib-dev libjpeg libpng giflib \
     && \
     pip install --upgrade pip && \
-    pip install Babel && \
-    apk del py-pip && \
+    pip install --upgrade flask flask_babel setuptools && \
+    # apk del py-pip && \
     yarn cache clean && \
     rm -rf /var/cache/* /tmp/*
 
