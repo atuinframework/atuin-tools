@@ -30,12 +30,3 @@ gulp.task(	'update:pip',
 				return $.sequence('update:pipinstall', 'update:pipcleandist')();
 			}
 );
-
-gulp.task(	'npm',
-			false,
-			function() {
-				return gulp.src('package.json')
-						.pipe($.plumber())
-						.pipe( $.start() );
-			}
-);

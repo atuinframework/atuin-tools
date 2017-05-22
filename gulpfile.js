@@ -17,7 +17,7 @@ gulp.task(	'default',
 					
 					// update
 					$.util.colors.yellow('update') + '\n\t\t' +
-					'Management of the development environment.\n\t\tIt checks that all dependencies are satisfied, initializes the env packages and updates them.\n\n\t' +
+					'Management of the development environment.\n\t\tIt updates the dependencies specified in the requirements.txt file.\n\n\t' +
 					
 					// monitor
 					$.util.colors.yellow('monitor [--type production]') + '\n\t\t' +
