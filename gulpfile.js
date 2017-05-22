@@ -15,10 +15,6 @@ gulp.task(	'default',
 					$.util.colors.yellow('default | help') + '\n\t\t' +
 					'Shows the available tasks\n\n\t' +
 					
-					// run
-					$.util.colors.yellow('run') + '\n' +
-					'\t\tRun development server.\n\n\t' +
-					
 					// update
 					$.util.colors.yellow('update') + '\n\t\t' +
 					'Management of the development environment.\n\t\tIt checks that all dependencies are satisfied, initializes the env packages and updates them.\n\n\t' +

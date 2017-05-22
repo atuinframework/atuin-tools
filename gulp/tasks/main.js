@@ -4,17 +4,6 @@ var gulp = require('gulp-help')(require('gulp')),
 	config = require('../config.js'),
 	mkdirs = require('mkdirs');
 	
-gulp.task(	'run',
-			'Run development server.',
-			function() {
-				mkdirs(config.tmp.datastore_db);
-				gulp.src('dev.sh')
-					.pipe($.start( [{
-						match: /dev.sh$/,
-						cmd: 'dev_appserver.py --storage_path=tmp/datastore app'
-					}]));
-			}
-);
 
 gulp.task(	'update',
 			'Updates Python requirements.',
