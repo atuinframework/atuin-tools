@@ -24,7 +24,7 @@ gulp.task(	'update:pipcleandist',
 			}
 );
 
-gulp.task(	'update:pip',
+gulp.task(	'update',
 			false,
 			function() {
 				return $.sequence('update:pipinstall', 'update:pipcleandist')();

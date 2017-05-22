@@ -1,9 +1,12 @@
 'use strict';
 var gulp = require('gulp-help')(require('gulp')),
 	$ = require('gulp-load-plugins')(),
+	config = require('../config.js'),
 	paths = require('../paths'),
 	path = require('path'),
+	mkdirs = require('mkdirs'),
 	del = require('del');
+
 
 gulp.task(	'watch',
 			false,
@@ -20,3 +23,11 @@ gulp.task(	'watch',
 				});
 			}
 );
+
+gulp.task(	'monitor',
+			'Real time check for css and js.',
+			function() {
+				$.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'watch')();
+			}
+);
+
