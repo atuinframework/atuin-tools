@@ -24,10 +24,6 @@ gulp.task(	'default',
 					'Real time check for css and js.\n\t\tIt handles errors and rebuilds the minified and compiled files.\n\t\t' +
 					$.util.colors.magenta('--type production') + 'compress css and obfuscate js.\n\n\t' +
 					
-					// deploy
-					//$.util.colors.yellow('deploy') + '\n\t\t' +
-					//'Deploy on gae.\n\n\t' +
-					
 					// clean
 					$.util.colors.yellow('clean[:min|:css|:js|:img]') + '\n\t\t' +
 					'Cleans files.\n\t\tFrom all project clean: *.pyc *.pyo *.~\n\t\t' +

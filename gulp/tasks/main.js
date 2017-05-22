@@ -19,21 +19,3 @@ gulp.task(	'monitor',
 			}
 );
 
-gulp.task(	'deploy:update',
-			false,
-			function() {
-				return gulp.src('dev.sh')
-					.pipe($.start( [{
-						match: /dev.sh$/,
-						cmd: 'appcfg.py update app'
-					}]));
-			}
-);
-
-gulp.task(	'deploy',
-			'Deploy on gae.',
-			function() {
-				$.util.env.type = 'production';
-				return $.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'deploy:update')();
-			}
-);
