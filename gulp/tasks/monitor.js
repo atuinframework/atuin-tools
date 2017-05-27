@@ -24,10 +24,27 @@ gulp.task(	'watch',
 			}
 );
 
+
 gulp.task(	'monitor',
 			'Real time check for css and js.',
 			function() {
-				$.sequence(['css', 'css_admin', 'js', 'js_admin', 'img'], 'watch')();
+				$.sequence([
+							'css', 'css_admin',
+							'js', 'js_admin',
+							'img'
+							],
+							'watch')();
 			}
 );
 
+gulp.task(	'prepare-deploy',
+			'Prepare static files to being deployed: minification and uglification of files.',
+			function() {
+				$.util.env.type = 'production';
+				return $.sequence([
+							'css', 'css_admin',
+							'js', 'js_admin',
+							'img'
+							])();
+			}
+);

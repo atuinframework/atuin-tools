@@ -1,12 +1,12 @@
 {
-  "name": "gae-atuin",
-  "version": "1.0.0",
-  "description": "Atuin Gulp",
+  "name": "atuin-gulp",
+  "version": "1.1.0",
+  "description": "Atuin gulp environment for static files management",
   "main": "gulpfile.js",
   "author": "",
   "license": "MIT",
   "repository": {
-    "type": "hg",
+    "type": "git",
     "url": "https://github.com/xcash/atuin-gulp"
   },
   "dependencies": {},

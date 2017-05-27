@@ -16,11 +16,7 @@ config ={
 		'js_admin'  : paths.static.min.js.root + '/admin',
 		'img' 		: paths.static.min.img.root
 	},
-	'lib' : paths.lib.root,
-	'tmp' : {
-		'datastore_db' : paths.tmp.datastore.root,
-	}
-	
+	'lib' : paths.lib.root
 }
 
 module.exports = config;
