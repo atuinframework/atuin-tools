@@ -43,8 +43,10 @@ It's a base container to derive any custom packages needed in local projects.
 
 ### Before the deploy... don't forget to:
 
+Minify, uglify and compress (production mode) the project's static files to be ready for the deploy.
+
 ```bash
-docker-compose run atuin-tools gulp prepare-deploy
+docker-compose run --rm atuin-tools gulp prepare-deploy
 ```
 
 ## Can I use your container?
