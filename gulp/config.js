@@ -1,6 +1,6 @@
 paths = require('./paths.js');
 
-config ={
+config = {
 	'src' : {
 		'css' 		: [ paths.static.src.css.root + '/style.scss'	],
 		'css_admin' : [ paths.static.src.css.root + '/admin/style.scss'	],
@@ -17,6 +17,6 @@ config ={
 		'img' 		: paths.static.min.img.root
 	},
 	'lib' : paths.lib.root
-}
+};
 
 module.exports = config;
