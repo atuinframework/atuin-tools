@@ -3,7 +3,7 @@
 ## Read This first
 
 This container is not meant to be used *as is* but part of the docker-compose
-environment started for development in Flask (and GAE) Atuin.
+environment started for development in Flask and GAE Atuin.
 
 ## What is Atuin?
 
@@ -28,10 +28,31 @@ all the tools needed to build the *static/min* folder of Atuin.
 
 It's a base container to derive any custom packages needed in local projects.
 
+### Suggested usage in project docker-compose file
+
+```yaml
+    services:
+      atuin-tools:
+        image: scalebox/atuin-gulp
+        volumes:
+          - ./app:/workspace/app
+          - ./babel.cfg:/workspace/babel.cfg
+          - ./requirements.txt:/workspace/requirements.txt
+```
+
+### Before the deploy... don't forget to:
+
+Minify, uglify and compress (production mode) the project's static files to be ready for the deploy.
+
+```bash
+docker-compose run --rm atuin-tools gulp prepare-deploy
+```
+
 ## Can I use your container?
 
 Of course. Use as a sample, ask us anything about it. But be careful, this is
 made specifically for Atuin.
+If you use it let us know any feedback.
 
 ## Autobuild
 
