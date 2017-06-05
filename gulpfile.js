@@ -14,7 +14,11 @@ gulp.task(	'default',
 					// default | help
 					$.util.colors.yellow('default | help') + '\n\t\t' +
 					'Shows the available tasks\n\n\t' +
-
+					
+					// update
+					$.util.colors.yellow('update') + '\n\t\t' +
+					'Dependencies management.\n\t\tIt updates the dependencies specified in the requirements.txt file.\n\n\t' +
+					
 					// monitor
 					$.util.colors.yellow('monitor [--type production]') + '\n\t\t' +
 					'Real time check for css and js.\n\t\tIt handles errors and rebuilds the minified and compiled files.\n\t\t' +
