@@ -17,8 +17,6 @@ COPY ./gulpfile.js /workspace/
 COPY ./gulp /workspace/gulp
 COPY ./package.json /workspace/
 
-ENV NODE_ENV development
-
 RUN npm update
 
 # Cleanup build tools to save image footprint
