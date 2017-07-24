@@ -24,11 +24,11 @@ p.static = {};
 p.static.root 	= p.main.root + '/static';
 
 // atuin/static
-p.static_atuin = {}
+p.static_atuin = {};
 p.static_atuin.root = p.atuin.root + '/static';
 
 // atuincms/static
-p.static_atuincms = {}
+p.static_atuincms = {};
 p.static_atuincms.root = p.atuincms.root + '/static';
 
 
@@ -112,15 +112,15 @@ p.static.min.img = {};
 p.static.min.img.root = p.static.min.root + '/img';
 
 // static/min/img/atuin
-p.static.min.img.atuin = {}
+p.static.min.img.atuin = {};
 p.static.min.img.atuin.root = p.static.min.img.root + '/atuin';
 
 // static/min/img/atuincms
-p.static.min.img.atuincms = {}
+p.static.min.img.atuincms = {};
 p.static.min.img.atuincms.root = p.static.min.img.root + '/atuincms';
 
 // lib
-p.lib = {}
+p.lib = {};
 p.lib.root = p.main.root + '/lib';
 
 module.exports = p;
