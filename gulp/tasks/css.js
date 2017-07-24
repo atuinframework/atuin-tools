@@ -67,7 +67,7 @@ gulp.task(	'css_admin',
 gulp.task(	'atuin_css_admin',
 			false,
 			function() {
-				return gulp.src(config.src.css_admin)
+				return gulp.src(config.src.atuin_css_admin)
 						.pipe($.plumber({
 							errorHandler: util.onError
 						}))
