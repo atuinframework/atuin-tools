@@ -24,30 +24,27 @@ gulp.task(	'watch',
 			}
 );
 
+var tasks_bundle = [
+	'atuin_css', 'atuin_css_admin',
+	'atuincms_css', 'atuincms_css_admin',
+	'css', 'css_admin',
+
+	'atuin_js', 'atuin_js_admin',
+	'atuincms_js', 'atuincms_js_admin',
+	'js', 'js_admin',
+
+	'atuin_img', 'atuincms_img', 'img'
+];
 gulp.task(	'monitor',
 			'Real time check for css and js.',
 			function() {
-				$.sequence([
-							'atuin_css', 'atuin_css_admin',
-							'css', 'css_admin',
-							'atuin_js', 'atuin_js_admin',
-							'js', 'js_admin',
-							'img', 'atuin_img'
-							],
-							'watch')();
+				$.sequence(tasks_bundle, 'watch')();
 			}
 );
-
 gulp.task(	'prepare-deploy',
 			'Prepare static files to being deployed: minification and uglification of files.',
 			function() {
 				$.util.env.type = 'production';
-				return $.sequence([
-							'atuin_css', 'atuin_css_admin',
-							'css', 'css_admin',
-							'atuin_js', 'atuin_js_admin',
-							'js', 'js_admin',
-							'img', 'atuin_img'
-							])();
+				return $.sequence(tasks_bundle)();
 			}
 );
