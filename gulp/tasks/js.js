@@ -5,7 +5,10 @@ var gulp = require('gulp-help')(require('gulp')),
 	paths = require('../paths.js'),
 	util = require('../util.js');
 
-// public
+/**
+ * Public
+ */
+// App public
 gulp.task(	'js',
 		    false,
 			function() {
@@ -21,7 +24,7 @@ gulp.task(	'js',
 			}	
 );
 
-// public atuin
+// Atuin public
 gulp.task(	'atuin_js',
 		    false,
 			function() {
@@ -37,7 +40,26 @@ gulp.task(	'atuin_js',
 			}	
 );
 
-// admin specific
+// Atuincms public
+gulp.task(	'atuincms_js',
+		    false,
+			function() {
+				return gulp.src(config.src.atuincms_js)
+						.pipe( $.plumber({
+							errorHandler: util.onError
+						}))
+						.pipe($.concat('atuincms.js'))
+						.pipe($.size({ title: 'Atuincms js ' }))
+						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
+						.pipe($.size({ title: 'Atuincms js:min ' }))
+						.pipe(gulp.dest(config.min.js));
+			}
+);
+
+/**
+ * Admin
+ */
+// App admin specific
 gulp.task(	'js_admin',
 		    false,
 			function() {
@@ -53,7 +75,7 @@ gulp.task(	'js_admin',
 			}	
 );
 
-// admin specific
+// Atuin admin
 gulp.task(	'atuin_js_admin',
 		    false,
 			function() {
@@ -67,4 +89,20 @@ gulp.task(	'atuin_js_admin',
 						.pipe($.size({ title: 'Atuin js_admin:min ' }))
 						.pipe(gulp.dest(config.min.js_admin));
 			}	
+);
+
+// Atuincms admin
+gulp.task(	'atuincms_js_admin',
+		    false,
+			function() {
+				return gulp.src(config.src.atuincms_js_admin)
+						.pipe( $.plumber({
+							errorHandler: util.onError
+						}))
+						.pipe($.concat('atuincms.js'))
+						.pipe($.size({ title: 'Atuincms js_admin ' }))
+						.pipe($.util.env.type === 'production' ? $.uglify({mangle:true}) : $.util.noop())
+						.pipe($.size({ title: 'Atuincms js_admin:min ' }))
+						.pipe(gulp.dest(config.min.js_admin));
+			}
 );

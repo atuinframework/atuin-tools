@@ -12,11 +12,10 @@ RUN apk add --no-cache \
     yarn cache clean && \
     rm -rf /var/cache/* /tmp/*
 
+
 COPY ./gulpfile.js /workspace/
 COPY ./gulp /workspace/gulp
 COPY ./package.json /workspace/
-
-ENV NODE_ENV development
 
 RUN npm update
 
