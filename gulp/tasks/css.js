@@ -21,7 +21,7 @@ gulp.task(	'css',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'App css' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'App css:min' }))
 						.pipe(gulp.dest(config.min.css));
 			}
@@ -41,7 +41,7 @@ gulp.task(	'atuin_css',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'Atuin css' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'Atuin css:min' }))
 						.pipe(gulp.dest(config.min.css));
 			}
@@ -61,7 +61,7 @@ gulp.task(	'atuincms_css',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'Atuincms css' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'Atuincms css:min' }))
 						.pipe(gulp.dest(config.min.css));
 			}
@@ -83,7 +83,7 @@ gulp.task(	'css_admin',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'App css_admin' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'App css_admin:min' }))
 						.pipe(gulp.dest(config.min.css_admin));
 			}
@@ -103,7 +103,7 @@ gulp.task(	'atuin_css_admin',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'Atuin css_admin' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'Atuin css_admin:min' }))
 						.pipe(gulp.dest(config.min.css_admin));
 			}
@@ -123,7 +123,7 @@ gulp.task(	'atuincms_css_admin',
 							cascade: false
 						}))
 						.pipe($.size({ title: 'Atuincms css_admin' }))
-						.pipe( $.util.env.type === 'production' ? $.cssnano() : $.util.noop())
+						.pipe( $.util.env.type === 'production' ? $.cssnano({zindex: false}) : $.util.noop())
 						.pipe($.size({ title: 'Atuincms css_admin:min' }))
 						.pipe(gulp.dest(config.min.css_admin));
 			}
