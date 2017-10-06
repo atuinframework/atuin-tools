@@ -6,11 +6,14 @@ RUN apk add --no-cache \
     build-base autoconf automake nasm \
     zlib-dev libjpeg libpng giflib \
     && \
-    pip install --upgrade pip && \
-    pip install --upgrade flask flask_babel setuptools && \
+    pip install --upgrade --no-cache-dir pip && \
+    pip install --upgrade --no-cache-dir flask flask_babel setuptools && \
     # apk del py-pip && \
     yarn cache clean && \
-    rm -rf /var/cache/* /tmp/*
+    rm -rf /var/cache/* /tmp/* && \
+    # To fix apk WARNING: Ignoring APKINDEX.84815163.tar.gz: Bad file descriptor
+    # and then error on packages installation
+    mkdir /var/cache/apk
 
 
 COPY ./gulpfile.js /workspace/
