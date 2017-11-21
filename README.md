@@ -46,7 +46,7 @@ It's a base container to derive any custom packages needed in local projects.
 Use 
 
 ```bash
-docker run --rm atuinframework/atuin-gulp:v2 gulp prepare-deploy
+docker-compose run --rm atuin-tools gulp prepare-deploy
 ```
 
 to minify, uglify and compress (production mode) the project's static files to be ready for the deploy.
