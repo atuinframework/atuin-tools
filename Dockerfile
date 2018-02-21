@@ -2,7 +2,7 @@ FROM monostream/nodejs-gulp-bower
 MAINTAINER Paolo Casciello <paolo.casciello@scalebox.it>
 
 RUN apk add --no-cache \
-    python py-pip \
+    python py-pip python-dev \
     build-base autoconf automake nasm \
     linux-headers \
     zlib-dev libjpeg libpng giflib \
