@@ -1,4 +1,4 @@
-# atuin-gulp
+# atuin-tools
 
 CMS branch. Use **only** with **unreleased** GAE Atuin CMS.
 
@@ -35,7 +35,7 @@ It's a base container to derive any custom packages needed in local projects.
 ```yaml
     services:
       atuin-tools:
-        image: atuinframework/atuin-gulp:cms
+        image: atuinframework/atuin-tools:cms
         volumes:
           - ./app:/workspace/app
           - ./config:/workspace/config
@@ -64,4 +64,4 @@ If you use it let us know any feedback.
 This container is auto-built on [Docker Hub]
 
 [Atuin Web Framework]: https://github.com/atuinframework
-[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-gulp
+[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-tools
