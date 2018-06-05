@@ -1,4 +1,4 @@
-# atuin-gulp
+# atuin-tools
 
 V2 Branch. Use **only** with **unreleased** Atuin v2.
 
@@ -35,7 +35,7 @@ It's a base container to derive any custom packages needed in local projects.
 ```yaml
     services:
       atuin-tools:
-        image: atuinframework/atuin-gulp:v2
+        image: atuinframework/atuin-tools:v2
         volumes:
           - ./app:/workspace/app
           - ./config:/workspace/config
@@ -64,4 +64,4 @@ If you use it let us know any feedback.
 This container is auto-built on [Docker Hub]
 
 [Atuin Web Framework]: https://github.com/atuinframework
-[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-gulp
+[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-tools
