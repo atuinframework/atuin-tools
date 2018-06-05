@@ -1,13 +1,13 @@
 {
-  "name": "atuin-gulp",
+  "name": "atuin-tools",
   "version": "1.1.0",
-  "description": "Atuin gulp environment for static files management",
+  "description": "Atuin tools environment for static files management",
   "main": "gulpfile.js",
   "author": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xcash/atuin-gulp"
+    "url": "https://github.com/atuinframework/atuin-tools"
   },
   "dependencies": {
     "del": "^2.2.2",

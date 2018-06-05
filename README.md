@@ -1,4 +1,4 @@
-# atuin-gulp
+# atuin-tools
 
 ## Read This first
 
@@ -33,7 +33,7 @@ It's a base container to derive any custom packages needed in local projects.
 ```yaml
     services:
       atuin-tools:
-        image: atuinframework/atuin-gulp
+        image: atuinframework/atuin-tools
         volumes:
           - ./app:/workspace/app
           - ./babel.cfg:/workspace/babel.cfg
@@ -63,4 +63,4 @@ If you use it let us know any feedback.
 This container is auto-built on [Docker Hub]
 
 [Atuin Web Framework]: https://github.com/atuinframework
-[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-gulp
+[Docker Hub]:https://hub.docker.com/r/atuinframework/atuin-tools
