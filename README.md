@@ -1,5 +1,7 @@
 # atuin-tools
 
+V2 Branch. Use **only** with **unreleased** Atuin v2.
+
 ## Read This first
 
 This container is not meant to be used *as is* but part of the docker-compose
@@ -33,11 +35,10 @@ It's a base container to derive any custom packages needed in local projects.
 ```yaml
     services:
       atuin-tools:
-        image: atuinframework/atuin-tools
+        image: atuinframework/atuin-tools:v2
         volumes:
           - ./app:/workspace/app
-          - ./babel.cfg:/workspace/babel.cfg
-          - ./requirements.txt:/workspace/requirements.txt
+          - ./config:/workspace/config
 ```
 
 ### To be done before deploying

@@ -6,13 +6,26 @@ var gulp = require('gulp-help')(require('gulp')),
 	del = require('del');
 
 
-gulp.task(	'update:pipinstall',
+// atuin dependencies
+gulp.task(	'update:pipinstall:atuin',
 			false,
 			function() {
-				return gulp.src('requirements.txt')
+				return gulp.src('gulpfile.js')
 						.pipe($.start( [{
-							match: /requirements.txt$/,
-							cmd: 'pip install -U -r requirements.txt -t ' + config.lib
+							match: /gulpfile.js$/,
+							cmd: 'pip install -U -r app/atuin/requirements.txt -t ' + config.lib
+						}]));
+			}
+);
+
+// project dependencies
+gulp.task(	'update:pipinstall:project',
+			false,
+			function() {
+				return gulp.src('gulpfile.js')
+						.pipe($.start( [{
+							match: /gulpfile.js$/,
+							cmd: 'pip install -U -r app/requirements.txt -t ' + config.lib
 						}]));
 			}
 );
@@ -27,6 +40,6 @@ gulp.task(	'update:pipcleandist',
 gulp.task(	'update',
 			false,
 			function() {
-				return $.sequence('update:pipinstall', 'update:pipcleandist')();
+				return $.sequence('update:pipinstall:atuin', 'update:pipinstall:project', 'update:pipcleandist')();
 			}
 );

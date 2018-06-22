@@ -24,14 +24,15 @@ gulp.task(	'watch',
 			}
 );
 
-
 gulp.task(	'monitor',
 			'Real time check for css and js.',
 			function() {
 				$.sequence([
+							'atuin_css', 'atuin_css_admin',
 							'css', 'css_admin',
+							'atuin_js', 'atuin_js_admin',
 							'js', 'js_admin',
-							'img'
+							'img', 'atuin_img'
 							],
 							'watch')();
 			}
@@ -42,9 +43,11 @@ gulp.task(	'prepare-deploy',
 			function() {
 				$.util.env.type = 'production';
 				return $.sequence([
+							'atuin_css', 'atuin_css_admin',
 							'css', 'css_admin',
+							'atuin_js', 'atuin_js_admin',
 							'js', 'js_admin',
-							'img'
+							'img', 'atuin_img'
 							])();
 			}
 );

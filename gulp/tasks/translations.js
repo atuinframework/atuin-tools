@@ -21,18 +21,16 @@ gulp.task(	'translations:init',
 			}
 );
 
-
 gulp.task(	'translations:extract',
 			false,
 			function() {
 				return gulp.src('gulpfile.js')
 						.pipe($.start( [{
 							match: /gulpfile.js$/,
-							cmd: 'pybabel extract -k lazy_gettext -F babel.cfg -o app/messages.pot app'
+							cmd: 'pybabel extract -k lazy_gettext -F config/babel.cfg -o app/messages.pot app'
 						}]));
 			}
 );
-
 
 gulp.task(	'translations:update',
 			false,
