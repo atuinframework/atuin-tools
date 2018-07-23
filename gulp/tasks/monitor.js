@@ -15,10 +15,35 @@ gulp.task(	'watch',
 				gulp.watch(paths.static.src.css.root + '/admin/*', ['css_admin']);
 				gulp.watch(paths.static.src.js.root + '/*', ['js']);
 				gulp.watch(paths.static.src.js.root + '/admin/*', ['js_admin']);
+				
+				gulp.watch(paths.static_atuin.src.css.root + '/*', ['atuin_css']);
+				gulp.watch(paths.static_atuin.src.css.root + '/admin/*', ['atuin_css_admin']);
+				gulp.watch(paths.static_atuin.src.js.root + '/*', ['atuin_js']);
+				gulp.watch(paths.static_atuin.src.js.root + '/admin/*', ['atuin_js_admin']);
+				
+				gulp.watch(paths.static_atuincms.src.css.root + '/*', ['atuincms_css']);
+				gulp.watch(paths.static_atuincms.src.css.root + '/admin/*', ['atuincms_css_admin']);
+				gulp.watch(paths.static_atuincms.src.js.root + '/*', ['atuincms_js']);
+				gulp.watch(paths.static_atuincms.src.js.root + '/admin/*', ['atuincms_js_admin']);
+				
 				var watchImg = gulp.watch(paths.static.src.img.root + '/**', ['img']);
 				watchImg.on('change', function(ev){
 					if (ev.type==='deleted') {
 						del( path.relative('./', ev.path).replace(paths.static.src.img.root, paths.static.min.img.root) );
+					}
+				});
+				
+				var watchImg = gulp.watch(paths.static_atuin.src.img.root + '/**', ['atuin_img']);
+				watchImg.on('change', function(ev){
+					if (ev.type==='deleted') {
+						del( path.relative('./', ev.path).replace(paths.static_atuin.src.img.root, paths.static.min.img.atuin.root) );
+					}
+				});
+				
+				var watchImg = gulp.watch(paths.static_atuincms.src.img.root + '/**', ['atuincms_img']);
+				watchImg.on('change', function(ev){
+					if (ev.type==='deleted') {
+						del( path.relative('./', ev.path).replace(paths.static_atuincms.src.img.root, paths.static.min.img.atuincms.root) );
 					}
 				});
 			}
