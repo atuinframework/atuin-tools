@@ -1,3 +1,2 @@
-*.komodoproject
-.vscode
-
+# Sphinx documentation
+docs/_build/
