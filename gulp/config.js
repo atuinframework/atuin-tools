@@ -15,11 +15,11 @@ config = {
 		'atuincms_js' 		: [ paths.static_atuincms.src.js.root + '/*.js' ],
 		'atuincms_js_admin'	: [ paths.static_atuincms.src.js.root + '/admin/*.js' ],
 		'img' 				: [ paths.static.src.img.root + '/**/*.@(jpg|gif|png)' ],
-		'img_as_is' 		: [ paths.static.src.img.root + '/**/*.@(svg)' ],
+		'img_as_is' 		: [ paths.static.src.img.root + '/**/*.@(svg|ico)' ],
 		'atuin_img' 		: [ paths.static_atuin.src.img.root + '/**/*.@(jpg|gif|png)' ],
-		'atuin_img_as_is'	: [ paths.static_atuin.src.img.root + '/**/*.@(svg)' ],
+		'atuin_img_as_is'	: [ paths.static_atuin.src.img.root + '/**/*.@(svg|ico)' ],
 		'atuincms_img' 		: [ paths.static_atuincms.src.img.root + '/**/*.@(jpg|gif|png)' ],
-		'atuincms_img_as_is': [ paths.static_atuincms.src.img.root + '/**/*.@(svg)' ]
+		'atuincms_img_as_is': [ paths.static_atuincms.src.img.root + '/**/*.@(svg|ico)' ]
 	},
 	'min' : {
 		'css' 		    : paths.static.min.css.root,
