@@ -1,105 +1,93 @@
+# Atuin tools - A tools suite for Atuin Web Framework
 
-# Atuin tools
+[![Docker Automated buil](https://img.shields.io/docker/automated/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
+[![Docker Build Status](https://img.shields.io/docker/build/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
+[![Documentation Status](https://readthedocs.org/projects/atuin-tools/badge/?version=latest)](https://atuin-tools.readthedocs.io/en/latest/?badge=latest)
 
-A docker container to support the local development tasks when using the 
-[Atuin Web Framework].
-
-This container is not meant to be used *as is* but as part of the docker-compose
-environment started when developing with the [Atuin Web Framework].
-
-## More about this container
-
-In modern days we use lots of different tools to build assets, preprocess 
-languages, concatenate and minify files or to optimize static assets.
-This container simplifies all these procedures by creating an environment which 
-runs **[gulp]** and all the tools needed to build the *static/min* folder of 
-Atuin.
-
-### Suggested container use
-
-In the `docker-compose.yaml` file
-
-```yaml
-	services:
-	  atuin-tools:
-	    image: atuinframework/atuin-tools:2.0.0
-	    volumes:
-	      - ./app:/workspace/app
-	      - ./config:/workspace/config
-```
-
-## Functionalities
-
-	- SASS preprocessing
-	- CSS concatenation and minification
-	- JS concatenation, minification and obfuscation
-	- Images optimization
-	- Translations management (extraction, compilation and update)
-	- Pre-deploy preparation task	
+In modern days we use lots of different tools to build assets, compile js, minification and such. This container simplifies it by creating an environment which runs [gulp] and all the tools needed to build the ``app/static/min`` folder of [Atuin Web Framework].
 
 
-## Available tasks
+Features
+--------
+
+- Python modules update
+- SASS to CSS compilation
+- CSS concatenation and minification
+- JS concatenation, minification and obfuscation
+- Images optimization without quality loss
+- Translations management (translations defined through Babel_)
+- Pre-deploy preparation task (CSS, JS, images fine optimizations)
+
+Links
+-----
+
+- [Documentation]
+- [Docker Hub]
+
+
+## Tasks
 
 ```
 GULP TASKS
 default | help
-	Shows the available tasks.
+	Shows the available tasks
 
 update
 	Dependencies management.
-	It updates all project's dependencies specified in requirements.txt files.
+	It updates the dependencies specified in the requirements.txt file.
 
 monitor [--type production]
-	Real time check of CSS and JS files.
-	It handles errors and rebuilds the minified and compiled files automatically at any change made.
-	--type production compress css and obfuscate js.
+	Real time check for css and js.
+	It handles errors and rebuilds the minified and compiled files.
+	--type productioncompress css and obfuscate js.
 
 prepare-deploy
-	Prepare static files for the deployment.
-	It concatenates, minifiy and uglify them with *production* flag enabled.
+	Preare static files to being deployed: minification and uglification of files.
 
-clean(:min|:css|:js|:img)
+clean[:min|:css|:js|:img]
 	Cleans files.
 	From all project clean: *.pyc *.pyo *.~
-	:min Clean all minified fiels. Deleted: app/static/min
-	:css Clean minified CSS.       Deleted: app/static/min/css
-	:js  Clean minified JS.        Deleted: app/static/min/js
-	:img Clean optimized img.      Deleted: app/static/min/img
+	:min Clean all minified fiels  app/static/min
+	:css Clean minified CSS  app/static/min/css
+	:js Clean minified JS  app/static/min/js
+	:img Clean optimized img  app/static/min/img
 
 
 LOCALIZATION SUBSYSTEM
 
-translations(:extract|:update|:compile|:init)
+translations<:extract|:update|:compile|:init>
 	Manages translations. Each language must be initialized using :init.
-	:extract            Extracts translations from source.
-	:update             Updates translations messages files for every language.
-	:compile            Compiles messages.po files for every language.
+	:extract Extracts translations from source 
+	:update Updates translations messages files for every language 
+	:compile Compiles messages.po files for every language 
 	:init --lang <code> Initialize a new language. Code must be language code like 'en', 'de', ...
 
 ```
 
 
-### Before the deploy
+### Before application deployment
 
-In order to finalize static files before the application deploy:
+In order to finalize static files before the application deployment
 
 ```bash
-docker-compose run --rm atuin-tools gulp prepare-deploy
+docker-compose run --rm tools gulp prepare-deploy
 ```
 
 This will minify, uglify and compress (production mode) the project's static 
-files to be ready for the deploy.
+files to be ready for the deployment.
 
 
 ## Can I use your container?
 
 Of course. Use as a sample, ask us anything. But be careful, this is
-made specifically for Atuin. If you use it let us know any feedback.
+made specifically for Atuin Web Framework. If you use it let us know any feedback.
 
-## Autobuild
+## Automatic container build
 
-This container is auto-built on [Docker Hub]
+This container is automatically built on [Docker Hub]
 
+[gulp]: https://www.npmjs.com/package/gulp
 [Atuin Web Framework]: https://github.com/atuinframework
-[gulp]: https://gulpjs.com/
+[Documentation]: https://atuin-tools.readthedocs.io/
 [Docker Hub]: https://hub.docker.com/r/atuinframework/atuin-tools
