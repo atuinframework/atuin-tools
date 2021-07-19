@@ -1,0 +1,20 @@
+{
+    "name": "atuin-tools",
+    "version": "3.0.0",
+    "description": "Atuin Framework Tools",
+    "private": true,
+    "author": "Paolo Casciello <paolo.casciello@scalebox.it>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/atuinframework/atuin-tools"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "webpack": "^5.45.1",
+        "webpack-cli": "^4.7.2"
+    }
+}

@@ -1,0 +1,55 @@
+/* PUBLIC CSS */
+@import "_variables";
+@import "_home";
+
+a, a:hover, a:active, a:focus {
+   outline: 0;
+}
+
+@media (max-width: 979px) {
+}
+
+@media (max-width: 768px) {
+}
+h1 a, h1 a:hover {
+}
+
+body {
+	background-color: $color-bg-5;
+	// color: $color-fg-2;
+	padding-bottom: 2em;
+}
+
+.full-viewport-height {
+	height: 100vh;
+}
+
+.brand {
+	font-family: 'Syncopate', sans-serif;
+}
+
+.header-wide {
+	background-color: $color-bg-1;
+	color: $color-fg-1;
+	border-bottom: solid 1px $color-fg-1;
+	
+	a {
+		color: $color-fg-1;
+	}
+}
+
+.body-wide {
+	padding-top: 50px;
+	min-height: 400px;
+}
+
+.footer {
+}
+
+.footer-wide {
+	background-color: $color-bg-3;
+	color: $color-fg-3;
+	border-top: solid 1px $color-fg-3;
+	min-height: 100px;
+
+}

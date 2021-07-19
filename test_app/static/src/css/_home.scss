@@ -1,0 +1,10 @@
+html {
+	&.home, &.auth {
+		&.login {
+			body {
+				// background-color: cadetblue;
+				background-color: #4690bc;
+			}
+		}
+	}
+}

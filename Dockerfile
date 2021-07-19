@@ -14,10 +14,13 @@ LABEL maintainer="Paolo Casciello <paolo.casciello@scalebox.it>"
 # COPY ./gulp /workspace/gulp
 # COPY ./package.json /workspace/
 
+COPY workspace /workspace
+
 WORKDIR /workspace
 
-# RUN npm update
+RUN yarn install
+RUN yarn upgrade
 
-ENV PATH=/workspace/node_modules/.bin:$PATH
+# ENV PATH=/workspace/node_modules/.bin:$PATH
 
 # CMD ["gulp", "monitor"]
