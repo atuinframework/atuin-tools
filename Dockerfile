@@ -18,7 +18,7 @@ COPY workspace /workspace
 
 WORKDIR /workspace
 
-RUN yarn install
+# RUN yarn install
 RUN yarn upgrade
 
 # ENV PATH=/workspace/node_modules/.bin:$PATH
