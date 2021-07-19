@@ -1,7 +1,13 @@
 # Atuin tools - A tools suite for Atuin Web Framework
 
+## Work in progress webpack refactory.
+
+We aim to support: typescript, compiling node_modules, reactive frameworks like Vue.
+
+---
+
+
 [![Docker Automated buil](https://img.shields.io/docker/automated/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
-[![Docker Build Status](https://img.shields.io/docker/build/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/atuinframework/atuin-tools.svg)](https://hub.docker.com/r/atuinframework/atuin-tools/)
 [![Documentation Status](https://readthedocs.org/projects/atuin-tools/badge/?version=latest)](https://atuin-tools.readthedocs.io/en/latest/?badge=latest)
 
